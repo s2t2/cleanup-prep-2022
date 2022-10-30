@@ -44,3 +44,11 @@ Run the unemployment report:
 ```sh
 python app/unemployment.py
 ```
+
+## Testing
+
+Run tests:
+
+```sh
+pytest
+```

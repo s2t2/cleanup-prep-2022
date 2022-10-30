@@ -28,21 +28,27 @@ def format_pct(my_number):
     return f"{my_number:.2f}%"
 
 
-if __name__ == "__main__":
 
-
-
+def fetch_unemployment_data():
+    """Fetches unemployment data from the AlphaVantage API. Returns a list of dictionaries."""
     request_url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={API_KEY}"
 
     response = requests.get(request_url)
 
     parsed_response = json.loads(response.text)
-    print(type(parsed_response))
+    #print(type(parsed_response))
     #pprint(parsed_response)
 
-    #breakpoint()
+    # TODO: consider converting string rates to floats before returning the data
+    # TODO: consider creating and returning a pandas DataFrame, if you like that kind of thing
+    return parsed_response["data"]
 
-    data = parsed_response["data"]
+
+
+if __name__ == "__main__":
+
+
+    data = fetch_unemployment_data()
 
 
     # Challenge A
