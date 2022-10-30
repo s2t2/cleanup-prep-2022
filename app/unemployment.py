@@ -1,20 +1,12 @@
 
-
-
-
-
-import os
 import json
 from pprint import pprint
 from statistics import mean
 
-from dotenv import load_dotenv
 import requests
 from plotly.express import line
 
-load_dotenv()
-
-API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
+from app.alpha import API_KEY
 
 
 def format_pct(my_number):
@@ -47,6 +39,7 @@ def fetch_unemployment_data():
 
 if __name__ == "__main__":
 
+    print("UNEMPLOYMENT REPORT...")
 
     data = fetch_unemployment_data()
 
