@@ -16,6 +16,20 @@ load_dotenv()
 
 API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
+
+def format_pct(my_number):
+    """
+    Formats a percentage number like 3.6555554 as percent, rounded to two decimal places.
+
+    Param my_number (float) like 3.6555554
+
+    Returns (str) like '3.66%'
+    """
+    return f"{my_number:.2f}%"
+
+
+
+
 request_url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={API_KEY}"
 
 response = requests.get(request_url)
@@ -51,7 +65,7 @@ rates_this_year = [float(d["value"]) for d in this_year]
 #print(rates_this_year)
 
 print("-------------------------")
-print("AVG UNEMPLOYMENT THIS YEAR:", f"{mean(rates_this_year)}%")
+print("AVG UNEMPLOYMENT THIS YEAR:", format_pct(mean(rates_this_year)))
 print("NO MONTHS:", len(this_year))
 
 
