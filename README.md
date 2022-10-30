@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ## Configuration
 
 
-[Obtain an API Key](https://www.alphavantage.co/support/#api-key) from AlphaVantage.
+[Obtain an API Key](https://www.alphavantage.co/support/#api-key) from AlphaVantage. For the stocks report to work, you'll need a "premium" key.
 
 Then create a local ".env" file and provide the key like this:
 
@@ -43,6 +43,12 @@ Run the unemployment report:
 
 ```sh
 python app/unemployment.py
+```
+
+Run the stocks report:
+
+```sh
+python app/stocks.py
 ```
 
 ## Testing
