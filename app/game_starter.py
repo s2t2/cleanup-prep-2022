@@ -19,7 +19,7 @@ print("COMPUTER CHOICE:", c)
 
 #
 # DETERMINATION OF WINNER
-#
+# ... (there may be a bug in this logic :-)
 
 if u == "rock" and c == "rock":
     print("It's a tie!")
